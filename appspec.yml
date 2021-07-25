@@ -8,11 +8,11 @@ hooks:
   BeforeInstall:
     - location: .deploy/install_dependencies.sh
     - location: .deploy/nginx/configure.sh
-    - location: .deploy/composer.sh
       timeout: 300
       runas: root
   AfterInstall:
     - location: .deploy/change_permissions.sh
+    - location: .deploy/composer.sh
       timeout: 300
       runas: root
   ApplicationStart:
