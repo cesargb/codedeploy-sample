@@ -8,6 +8,7 @@ hooks:
   BeforeInstall:
     - location: .deploy/install_dependencies.sh
     - location: .deploy/nginx/configure.sh
+    - location: .deploy/php/configure.sh
       timeout: 300
       runas: root
   AfterInstall:
