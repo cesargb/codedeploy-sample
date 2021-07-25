@@ -12,4 +12,4 @@ sudo composer install
 # Env
 APP_KEY=$(aws ssm get-parameters --region ${REGION} --names app.backend.key --with-decryption --query Parameters[0].Value)
 cp "${PATH_DEPLOY}/.deploy/app/backend/.env.backend" "${PATH_ROOT}/.env"
-ed "${PATH_ROOT}/.env" < "s/APP_KEY_VALUE/2/\nw\nq\n"
+echo "APP_KEY=${APP_KEY}" >> "${PATH_ROOT}/.env"
