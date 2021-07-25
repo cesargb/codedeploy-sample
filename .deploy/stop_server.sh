@@ -1,9 +1,9 @@
 
 #!/bin/bash
 
-isExistApp=pgrep httpd
+isExistApp=pgrep nginx
 if [[ -n $isExistApp ]]; then
-    systemctl stop httpd.service
+    systemctl stop nginx.service
 fi
 
 isExistApp=pgrep mysqld
