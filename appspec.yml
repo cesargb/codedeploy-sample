@@ -1,0 +1,24 @@
+
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/www/html/backend
+hooks:
+  BeforeInstall:
+    - location: .deploy/install_dependencies.sh
+      timeout: 300
+      runas: root
+  AfterInstall:
+    - location: .deploy/change_permissions.sh
+      timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: .deploy/start_server.sh
+    - location: scripts/create_test_db.sh
+      timeout: 300
+      runas: root
+  ApplicationStop:
+    - location: .deploy/stop_server.sh
+      timeout: 300
+      runas: root
