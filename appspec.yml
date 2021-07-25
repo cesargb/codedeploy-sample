@@ -7,6 +7,7 @@ files:
 hooks:
   BeforeInstall:
     - location: .deploy/install_dependencies.sh
+    - location: .deploy/composer.sh
       timeout: 300
       runas: root
   AfterInstall:
