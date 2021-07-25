@@ -9,11 +9,11 @@ hooks:
     - location: .deploy/install_dependencies.sh
     - location: .deploy/nginx/configure.sh
     - location: .deploy/php/configure.sh
+    - location: .deploy/app/backend/configure.sh
       timeout: 300
       runas: root
   AfterInstall:
     - location: .deploy/change_permissions.sh
-    - location: .deploy/composer.sh
       timeout: 300
       runas: root
   ApplicationStart:
